@@ -1,0 +1,288 @@
+/* Adminpanel.css */
+.admin-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  direction: rtl;
+  text-align: right;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.admin-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #c71c10;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.admin-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #da210d, #f31212);
+  border-radius: 2px;
+}
+
+.order-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.order-card {
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.order-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to right, #da210d, #f31212);
+}
+
+.order-card p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.order-card strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.status-control {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-control label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.status-control select {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex-grow: 1;
+}
+
+.status-control select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.empty-orders {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* افکت برای کارت‌های با وضعیت مختلف */
+.order-card[data-status="در حال بررسی"]::before {
+  background: linear-gradient(to bottom, #f39c12, #f1c40f);
+}
+
+.order-card[data-status="در حال آماده‌سازی"]::before {
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+.order-card[data-status="ارسال شده"]::before {
+  background: linear-gradient(to bottom, #9b59b6, #8e44ad);
+}
+
+.order-card[data-status="تحویل داده شده"]::before {
+  background: linear-gradient(to bottom, #cc602e, #d35b0c);
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+      padding: 20px;
+  }
+
+  .order-list {
+      grid-template-columns: 1fr;
+  }
+
+  .order-card {
+      padding: 20px;
+  }
+}
+
+
+.admin-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-tabs button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    position: relative;
+}
+
+.admin-tabs button.active {
+    color: #da210d;
+    font-weight: 600;
+}
+
+.admin-tabs button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #da210d;
+}
+
+.food-management {
+    margin-top: 20px;
+}
+
+.add-food-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.add-food-form h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-food-form button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.add-food-form button:hover {
+    background-color: #2ecc71;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.food-item-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.food-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-details {
+    padding: 15px;
+}
+
+.food-details h4 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.food-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.remove-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
