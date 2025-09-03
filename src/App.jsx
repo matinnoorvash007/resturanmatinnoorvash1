@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import Navbar from './component/navbar/navbar'
-import {  Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Cart from './pages/cart/Cart'
 import Placeorder from './pages/placeorder/Placeorder'
@@ -51,18 +51,4 @@ const App = () => {
     )
 }
 
-// export default App
-
-
-// import { HashRouter, Routes, Route } from 'react-router-dom';
-
-// function App() {
-//   return (
-//     <HashRouter>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/menu" element={<Menu />} />
-//       </Routes>
-//     </HashRouter>
-//   );
-// }
+export default App
