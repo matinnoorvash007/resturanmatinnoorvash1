@@ -1,16 +1,16 @@
 {
   "name": "resturant",
-  "homepage": "https://matinnoorvash007.github.io/noorvashmatin",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://matinnoorvash007.github.io/resturanmatinnoorvash1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
